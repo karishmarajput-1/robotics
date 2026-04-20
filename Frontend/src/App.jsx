@@ -13,6 +13,7 @@ import Register from './pages/Register'
 import Profile from './pages/Profile'
 import Explore from './components/Explore'
 import ServiceDetails from "./pages/ServiceDetails";
+import ImageView from './pages/ImageView'
 export default function App() {
   return (
     <div>
@@ -25,6 +26,7 @@ export default function App() {
         <Route path='/about' element={<About />} />
         <Route path='/services' element={<Services />} />
         <Route path='/service/:id' element={<ServiceDetails />} />
+        <Route path='/service/:id/image/:imgIndex' element={<ImageView/>} />
         <Route path='/contact' element={<Contact />} />
         <Route path='/login' element={<Login />} />
         <Route path='/profile' element={<Profile />} />

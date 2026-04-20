@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import "./serviceDetails.css";
+import "./serviceDetails.css"; // same CSS reuse
 
 const defaultImages = [
   "https://as1.ftcdn.net/v2/jpg/18/22/07/74/1000_F_1822077417_uJqy8GynuLaw1no7lQxghZT8VTxgaAEk.jpg",
@@ -8,8 +8,8 @@ const defaultImages = [
   "https://as2.ftcdn.net/v2/jpg/06/18/84/13/1000_F_618841391_8JfnZG0Umpd8Q4jmbV3iFjXAcUPdO2hW.jpg"
 ];
 
-const ServiceDetails = () => {
-  const { id } = useParams();
+const ImageView = () => {
+  const { id, imgIndex } = useParams();
   const navigate = useNavigate();
 
   const [service, setService] = useState(null);
@@ -21,9 +21,14 @@ const ServiceDetails = () => {
       .catch(err => console.log(err));
   }, [id]);
 
-  if (!service) {
-    return <h2 style={{ color: "white" }}>Loading...</h2>;
-  }
+  if (!service) return <h2 style={{ color: "white" }}>Loading...</h2>;
+
+  const images =
+    service.extraImages && service.extraImages.length > 0
+      ? service.extraImages
+      : defaultImages;
+
+  const selectedImage = images[imgIndex];
 
   return (
     <div className="service-details">
@@ -35,7 +40,8 @@ const ServiceDetails = () => {
 
         <h1>{service.title}</h1>
 
-        <img src={service.img} alt={service.title} className="details-img" />
+        {/* 🔥 BIG IMAGE */}
+        <img src={selectedImage} alt="" className="details-img" />
 
         <p className="details-desc">{service.desc}</p>
 
@@ -43,22 +49,9 @@ const ServiceDetails = () => {
           {service.more || "Advanced robotics solutions with AI and automation."}
         </p>
 
-        {/* ✅ EXTRA IMAGES (backend + fallback) */}
-        <div className="extra-images">
-          {(service.extraImages || defaultImages).map((img, i) => (
-            <img
-              key={i}
-              src={img}
-              alt="robot"
-              onClick={() => navigate(`/service/${id}/image/${i}`)}
-              style={{ cursor: "pointer" }}
-            />
-          ))}
-        </div>
-
       </div>
     </div>
   );
 };
 
-export default ServiceDetails;
+export default ImageView;

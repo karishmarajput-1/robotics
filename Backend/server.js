@@ -5,6 +5,7 @@ import { createTables } from './config/schema.js';
 import authRoutes from './routes/authRoutes.js';
 import contactRoutes from './routes/contactRoutes.js';
 import jobRoutes from './routes/jobRoutes.js';
+import serviceRoutes from "./routes/serviceRoutes.js";
 
 dotenv.config();
 
@@ -22,6 +23,7 @@ app.use(express.urlencoded({ extended: true }));
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/contacts', contactRoutes);
+app.use("/api/services", serviceRoutes);
 app.use('/api/jobs', jobRoutes);
 
 // Health check

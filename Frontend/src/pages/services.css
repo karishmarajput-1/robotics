@@ -6,6 +6,10 @@ body {
 }
 
 /* HERO */
+.services-hero h1 {
+  font-size: 45px;
+}
+
 .services-hero {
   text-align: center;
   padding: 100px 20px;
