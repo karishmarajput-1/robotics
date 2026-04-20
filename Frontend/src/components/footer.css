@@ -1,0 +1,114 @@
+.footer {
+  background: #0a0f1c;
+  color: white;
+  padding: 60px 80px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Grid Layout */
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 40px;
+}
+
+/* Headings */
+.footer-column h4 {
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: #00e5ff;
+  text-shadow: 0 0 8px #00e5ff;
+}
+
+/* Links */
+.footer-column a {
+  display: block;
+  margin: 10px 0;
+  color: #bbb;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s;
+  position: relative;
+}
+
+/* Neon Hover Effect */
+.footer-column a:hover {
+  color: #00e5ff;
+  transform: translateX(5px);
+  text-shadow: 0 0 5px #00e5ff;
+}
+
+/* Animated underline */
+.footer-column a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -3px;
+  background: #00e5ff;
+  transition: 0.3s;
+}
+
+.footer-column a:hover::after {
+  width: 60%;
+}
+
+/* Bottom Section */
+.footer-bottom {
+  margin-top: 50px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #888;
+}
+
+/* 🔥 Smooth Fade Animation */
+.footer {
+  animation: fadeUp 1s ease-in-out;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* ========================= */
+/* 📱 MOBILE (<= 600px) */
+/* ========================= */
+@media (max-width: 600px) {
+
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr); /* 🔥 2 columns instead of 1 */
+    padding: 0 15px;
+    gap: 20px;
+    text-align: left; /* better readability */
+  }
+
+  .footer-col {
+    margin-bottom: 10px;
+  }
+
+  /* text adjust */
+  .footer-col h3 {
+    font-size: 15px;
+  }
+
+  .footer-col p,
+  .footer-col ul li {
+    font-size: 13px;
+  }
+
+  /* hover underline fix */
+  .footer-col ul li::after {
+    left: 0; /* normal align */
+    transform: none;
+  }
+
+}

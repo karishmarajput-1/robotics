@@ -1,0 +1,175 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* MAIN */
+.login-page {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100vh;
+}
+
+/* ========================= */
+/* LEFT SIDE */
+/* ========================= */
+.login-left {
+  background: linear-gradient(135deg, #0b0f1a, #1f3b6d);
+  color: white;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-left h1 {
+  font-size: 38px;
+  margin-bottom: 15px;
+}
+
+.login-left p {
+  opacity: 0.8;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.login-left img {
+  width: 85%;
+  border-radius: 20px;
+  margin-top: 20px;
+  box-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+}
+
+/* ========================= */
+/* RIGHT SIDE */
+/* ========================= */
+.login-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px;
+  /* background: #f9fafb; */
+  background-color: #16203d;
+}
+
+.login-right h2 {
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+/* FORM */
+.login-right form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* INPUT */
+.login-right input {
+  padding: 14px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  transition: 0.3s;
+  color: #0b0f1a;
+}
+
+.login-right input:focus {
+  border-color: #00d4ff;
+  box-shadow: 0 0 8px #00d4ff;
+  outline: none;
+}
+
+/* BUTTON */
+.login-right button {
+  padding: 14px;
+  background: linear-gradient(90deg, #00d4ff, #0077ff);
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-right button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #00d4ff;
+}
+
+/* EXTRA */
+.extra {
+  margin-top: 15px;
+}
+
+.extra span {
+  color: #00d4ff;
+  cursor: pointer;
+}
+
+/* ========================= */
+/* 📱 TABLET */
+/* ========================= */
+/* @media (max-width: 992px) { */
+
+@media (max-width: 600px) {
+
+  .login-page {
+    grid-template-columns: 1fr;
+  }
+
+  .login-left {
+    padding: 40px;
+    text-align: center;
+  }
+
+  .login-left img {
+    width: 100%;
+  }
+
+  .login-right {
+    padding: 10px;
+  }
+
+}
+
+/* ========================= */
+/* 📱 MOBILE */
+/* ========================= */
+@media (max-width: 600px) {
+
+  .login-left h1 {
+    font-size: 26px;
+  }
+
+  .login-right h2 {
+    font-size: 22px;
+  }
+
+  .login-right input,
+  .login-right button {
+    padding: 12px;
+  }
+
+}
+
+/* ========================= */
+/* SMALL DEVICES */
+/* ========================= */
+@media (max-width: 400px) {
+
+  .login-left {
+    padding: 20px;
+  }
+
+  .login-right {
+    padding: 20px;
+  }
+  
+
+}

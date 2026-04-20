@@ -1,0 +1,223 @@
+/* RESET */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0b0f1a;
+  color: white;
+}
+
+/* MAIN */
+.about {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.hero h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  position: relative;
+  opacity: 0.8;
+  font-size: 16px;
+  left: -450px;
+  top: 40px;
+
+}
+
+.hero-img {
+  width: 400px;
+  max-width: 100%;
+  margin-top: 30px;
+  border-radius: 20px;
+}
+
+/* SECTION */
+.section {
+  padding: 60px 8%;
+}
+
+/* GRID */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+/* IMAGE */
+.side-img {
+  width: 100%;
+  border-radius: 20px;
+}
+
+/* CARDS */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.card {
+  padding: 20px;
+  background: #1c2541;
+  border-radius: 12px;
+  text-align: center;
+}
+
+/* DARK */
+.dark {
+  background: #111827;
+}
+
+/* SCROLL STRIP */
+.scroll-section {
+  overflow: hidden;
+  padding: 40px 0;
+}
+
+.scroll-track {
+  display: flex;
+  gap: 20px;
+  animation: scroll 20s linear infinite;
+}
+
+.scroll-track img {
+  height: 180px;
+  border-radius: 15px;
+}
+
+/* ANIMATION */
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ========================= */
+/* 📱 TABLET (<= 992px) */
+/* ========================= */
+@media (max-width: 992px) {
+
+  .hero h1 {
+    font-size: 30px;
+    position: relative;
+    top: -40px;
+    left: 85px;
+  }
+  .hero p {
+    font-size: 10px;
+    position: relative;
+    top: 60px;
+    left: -27px;
+  }
+
+  .hero-img {
+    width: 100px;
+  }
+
+  .grid-2 {
+    grid-template-columns: 1fr; /* stack */
+    text-align: center;
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+/* ========================= */
+/* 📱 MOBILE (<= 600px) */
+/* ========================= */
+@media (max-width: 600px) {
+
+  /* HERO */
+  .hero {
+    padding: 50px 15px;
+  }
+
+  .hero h1 {
+    font-size: 24px;
+    line-height: 1.3;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+  /* SECTION */
+  .section {
+    padding: 40px 15px;
+  }
+
+  .section h2 {
+    font-size: 20px;
+  }
+
+  .section p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* GRID */
+  .grid-2 {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* CARDS (IMPORTANT FIX 🔥) */
+  .cards {
+    grid-template-columns: 1fr; /* single column */
+  }
+
+  .card {
+    padding: 18px;
+  }
+
+  /* IMAGE FIX */
+  .hero-img {
+    width: 100%;
+  }
+
+  .side-img {
+    width: 100%;
+  }
+
+  /* SCROLL STRIP */
+  .scroll-track img {
+    height: 120px;
+  }
+
+}
+
+/* ========================= */
+/* 📱 SMALL PHONES (<= 400px) */
+/* ========================= */
+@media (max-width: 400px) {
+
+  .hero h1 {
+    font-size: 20px;
+  }
+
+  .section h2 {
+    font-size: 18px;
+  }
+
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}

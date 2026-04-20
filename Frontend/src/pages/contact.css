@@ -1,0 +1,123 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0b0f1a;
+  color: white;
+}
+
+/* HERO */
+.contact-hero {
+  text-align: center;
+  padding: 100px 20px;
+}
+
+/* MAIN CONTAINER */
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 60px 10%;
+  gap: 40px;
+  align-items: center;
+}
+
+/* FORM */
+.contact-form {
+  background: #1c2541;
+  padding: 30px;
+  border-radius: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  color: black;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: none;
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 12px;
+  background: #00d4ff;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* IMAGE */
+.contact-image img {
+  width: 100%;
+  border-radius: 20px;
+}
+
+/* INFO CARDS */
+.contact-info {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 50px 10%;
+}
+
+.info-card {
+  background: #1c2541;
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  width: 200px;
+}
+
+/* AUTO SCROLL */
+.scroll-section {
+  overflow: hidden;
+  padding: 40px 0;
+}
+
+.scroll-track {
+  display: flex;
+  gap: 20px;
+  animation: scroll 20s linear infinite;
+}
+
+.scroll-track img {
+  height: 180px;
+  border-radius: 15px;
+}
+
+/* ANIMATION */
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ========================= */
+/* 📱 RESPONSIVE */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+  .contact-container {
+    grid-template-columns: 1fr; /* stack */
+    padding: 40px 20px;
+  }
+
+  .contact-info {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .info-card {
+    width: 90%;
+  }
+
+  .scroll-track img {
+    height: 120px;
+  }
+
+  .contact-hero h1 {
+    font-size: 26px;
+  }
+
+}

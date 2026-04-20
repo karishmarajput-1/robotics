@@ -1,0 +1,190 @@
+body {
+  margin: 0;
+  background: #0b0f1a;
+}
+
+/* MAIN SECTION */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* CENTER IMAGE */
+
+.center-box{
+    display: flex;
+    margin-bottom: 70px;
+}
+.center-box img {
+  width: 500px;
+  height: 95vh;
+  border-radius: 20px;
+  animation: fadeIn 1s ease forwards;
+}
+
+/* ICON COMMON */
+.icon {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  opacity: 0;
+  transform: scale(0.5);
+  animation: appear 1s ease forwards;
+}
+
+.icon img {
+  width: 100%;
+}
+
+/* DIFFERENT POSITIONS (like Chrome) */
+.icon-0 { top: 20%; left: 25%; animation-delay: 0.2s; }
+.icon-1 { top: 30%; right: 20%; animation-delay: 0.4s; }
+.icon-2 { bottom: 20%; left: 30%; animation-delay: 0.6s; }
+.icon-3 { bottom: 25%; right: 25%; animation-delay: 0.8s; }
+
+/* FLOATING ANIMATION */
+.icon {
+  animation: appear 1s ease forwards, float 4s ease-in-out infinite;
+}
+
+/* ENTRY */
+@keyframes appear {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* FLOAT (Chrome style 🔥) */
+@keyframes float {
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(-25px); }
+  100% { transform: translateY(0px); }
+}
+
+/* CENTER FADE */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+/* ========================= */
+@media (max-width: 768px) {
+
+  .hero {
+    min-height: auto;
+    padding: 40px 0;
+  }
+
+  .center-box img {
+    width: 280px;
+    height: 420px;
+  }
+
+  .icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  /* reposition icons */
+  .icon-0 { top: 10%; left: 10%; }
+  .icon-1 { top: 15%; right: 10%; }
+  .icon-2 { bottom: 10%; left: 15%; }
+  .icon-3 { bottom: 10%; right: 15%; }
+}
+
+
+@media (max-width: 992px) {
+
+  .center-box img {
+    width: 350px;
+  }
+
+  .icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .section {
+    padding: 60px 5%;
+  }
+}
+
+/* ========================= */
+/* 📱 MOBILE */
+/* ========================= */
+@media (max-width: 768px) {
+
+  .hero {
+    min-height: auto;
+    padding: 40px 10px;
+  }
+
+  .center-box img {
+    width: 260px;
+  }
+
+  .icon {
+    width: 45px;
+    height: 45px;
+  }
+
+  /* reposition icons */
+  .icon-0 { top: 8%; left: 8%; }
+  .icon-1 { top: 12%; right: 8%; }
+  .icon-2 { bottom: 8%; left: 12%; }
+  .icon-3 { bottom: 8%; right: 12%; }
+
+  /* SECTION STACK */
+  .section {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .sec-left,
+  .sec-right {
+    width: 100%;
+  }
+
+  .sec-left h2 {
+    font-size: 1.5rem;
+  }
+
+  .sec-left p {
+    font-size: 0.9rem;
+  }
+}
+
+/* ========================= */
+/* SMALL MOBILE */
+/* ========================= */
+@media (max-width: 400px) {
+
+  .center-box img {
+    width: 280px;
+  }
+
+  .icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .sec-left h2 {
+    font-size: 1.3rem;
+  }
+
+  .sec-left p {
+    font-size: 0.8rem;
+  }
+}

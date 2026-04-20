@@ -1,0 +1,160 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0b0f1a;
+  color: white;
+}
+
+/* HERO */
+.services-hero {
+  text-align: center;
+  padding: 100px 20px;
+}
+
+/* GRID */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  padding: 50px 10%;
+  gap: 30px;
+}
+
+/* CARD */
+.service-card {
+  background: #1c2541;
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.service-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.service-card:hover img {
+  transform: scale(1.1);
+}
+
+.card-content {
+  padding: 20px;
+}
+
+/* FEATURE */
+.feature-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 80px 10%;
+  gap: 40px;
+}
+
+.feature-img {
+  width: 100%;
+  border-radius: 20px;
+}
+
+/* AUTO SCROLL */
+.scroll-section {
+  overflow: hidden;
+  padding: 50px 0;
+}
+
+.scroll-track {
+  display: flex;
+  gap: 20px;
+  animation: scroll 20s linear infinite;
+}
+
+.scroll-track img {
+  height: 180px;
+  border-radius: 15px;
+}
+
+/* ANIMATION */
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+
+/* ========================= */
+/* TABLET (max-width: 992px) */
+/* ========================= */
+@media (max-width: 992px) {
+
+  .services-hero h1 {
+    font-size: 32px;
+  }
+
+  .services-hero p {
+    font-size: 16px;
+  }
+
+  .feature-section {
+    grid-template-columns: 1fr; /* stack */
+    text-align: center;
+  }
+
+  .feature-img {
+    margin-top: 20px;
+  }
+
+}
+
+
+/* ========================= */
+/* MOBILE (max-width: 600px) */
+/* ========================= */
+@media (max-width: 600px) {
+
+  /* HERO */
+  .services-hero {
+    padding: 60px 15px;
+  }
+
+  .services-hero h1 {
+    font-size: 26px;
+  }
+
+  .services-hero p {
+    font-size: 14px;
+  }
+
+  /* GRID */
+  .services-grid {
+    padding: 30px 15px;
+    grid-template-columns: 1fr; /* single column */
+  }
+
+  /* CARD IMAGE FIX */
+  .service-card img {
+    height: 180px;
+  }
+
+  /* FEATURE SECTION */
+  .feature-section {
+    padding: 40px 15px;
+  }
+
+  .feature-text h2 {
+    font-size: 22px;
+  }
+
+  .feature-text p {
+    font-size: 14px;
+  }
+
+  /* SCROLL IMAGES */
+  .scroll-track img {
+    height: 120px;
+  }
+
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}

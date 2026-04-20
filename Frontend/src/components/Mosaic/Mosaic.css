@@ -1,0 +1,133 @@
+body {
+  margin: 0;
+  background: #111;
+}
+
+/* STRIP LAYOUT (ONE LINE) */
+.mosaic-strip {
+  display: flex;
+  gap: 20px;
+  padding: 100px 40px;
+  overflow: scroll;
+}
+
+/* ITEM BASE STATE */
+.mosaic-item {
+  width: 220px;
+  height: 300px;
+  flex-shrink: 0;
+
+  transform: translate3d(0, 90px, 0) scale(0.85);
+  opacity: 0;
+
+  transition: 
+    transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+    opacity 0.3s ease;
+}
+
+/* ACTIVE (SCROLL PAR) */
+.mosaic-item.active {
+  transform: translate3d(0, 0, 0) scale(1);
+  opacity: 1;
+}
+
+/* IMAGE */
+.mosaic-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+/* HOVER LIKE CHROME */
+.mosaic-item:hover {
+  transform: translate3d(0, -20px, 0px) scale(1.03);
+}
+
+.mosaic-strip::-webkit-scrollbar{
+    display: none;
+}
+
+
+#page4{
+    min-height: 90vh;
+    width: 100%;
+    /* background-color: #343c8b; */
+     background: #142958;
+    position: relative;
+    /* padding-bottom: 13vh; */
+}
+.section{
+    width: 100%;
+    height: 72vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 13vh 10vh;
+    padding-bottom: 0vh;
+}
+.sec-left{
+    height: 100%;
+    width: 25%;
+    padding-top: 3vh;
+    /* background-color: aqua; */
+    border-top: 2px solid#ffffff;
+}
+.sec-left h2{
+    font-size: 2vw;
+    font-weight: 500;
+    color: #ffffff;
+}
+/* .sec-left p{
+    color: #ffdbdb;
+    margin-top: 7;
+    /* font-size: 1.6vw;  }
+    */
+
+    .sec-left p {
+  color: #e5e7eb;        /* soft white (better readability) */
+  margin-top: 12px;      /* proper spacing */
+  font-size: 16px;       /* consistent readable size */
+  line-height: 1.6;      /* better text spacing */
+  letter-spacing: 0.5px; /* slight clarity boost */
+}
+
+.sec-right{
+    height: 100%;
+    width: 70%;
+    background-color: blanchedalmond;
+    position: relative;
+}
+.sec-right img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+@media (max-width: 768px) {
+
+  .section {
+    flex-direction: column;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .sec-left,
+  .sec-right {
+    width: 100%;
+  }
+
+  .sec-left h2 {
+    font-size: 22px;
+  }
+
+  .sec-left p {
+    font-size: 14px;
+  }
+
+  .mosaic-item {
+    width: 140px;
+    height: 200px;
+  }
+}

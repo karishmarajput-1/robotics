@@ -1,0 +1,148 @@
+/* MAIN */
+.admin-page {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+  background: #0b0f1a;
+  overflow: hidden;
+  position: relative;
+}
+
+/* 🔥 GLOW BACKGROUND */
+.glow-bg {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, #00d4ff55, transparent);
+  top: -100px;
+  left: -100px;
+  filter: blur(100px);
+}
+
+/* LEFT */
+.admin-left {
+  color: white;
+  padding: 60px;
+  position: relative;
+}
+
+.admin-left h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.admin-left p {
+  opacity: 0.8;
+}
+
+/* IMAGE */
+.admin-left img {
+  width: 80%;
+  margin-top: 30px;
+  border-radius: 20px;
+  box-shadow: 0 0 40px #00d4ff55;
+}
+
+/* 🔥 FLOATING ORBS */
+.floating-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+  animation: float 6s infinite ease-in-out;
+}
+
+.orb1 {
+  width: 120px;
+  height: 120px;
+  background: #00d4ff;
+  top: 20%;
+  left: 10%;
+}
+
+.orb2 {
+  width: 80px;
+  height: 80px;
+  background: #0077ff;
+  bottom: 20%;
+  right: 20%;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-30px); }
+  100% { transform: translateY(0px); }
+}
+
+/* RIGHT */
+.admin-right {
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* 🔥 GLASS EFFECT */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  border-left: 1px solid rgba(255,255,255,0.1);
+}
+
+/* TITLE */
+.admin-right h2 {
+  color: white;
+  margin-bottom: 20px;
+}
+
+/* INPUTS */
+.admin-right input,
+.admin-right textarea {
+  margin-bottom: 15px;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #00d4ff44;
+  background: transparent;
+  color: white;
+  transition: 0.3s;
+}
+
+.admin-right input:focus,
+.admin-right textarea:focus {
+  border-color: #00d4ff;
+  box-shadow: 0 0 10px #00d4ff;
+  outline: none;
+}
+
+/* BUTTON */
+.admin-right button {
+  padding: 14px;
+  background: linear-gradient(90deg, #00d4ff, #0077ff);
+  border: none;
+  border-radius: 30px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.admin-right button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #00d4ff;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .admin-page {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-left,
+  .admin-right {
+    padding: 30px;
+    text-align: center;
+  }
+
+  .admin-left img {
+    width: 100%;
+  }
+}
